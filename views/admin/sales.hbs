@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- editable-table.html  21 Nov 2019 03:56:01 GMT -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Otika - Admin Dashboard Template</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="/stylesheets/adminassets/css/app.min.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="/stylesheets/adminassets/bundles/datatables/datatables.min.css">
+  <link rel="stylesheet"
+    href="/stylesheets/adminassets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/stylesheets/adminassets/css/style.css">
+  <link rel="stylesheet" href="/stylesheets/adminassets/css/components.css">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="/stylesheets/adminassets/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href='/stylesheets/adminassets/img/favicon.ico' />
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="/stylesheets/adminassets/css/style.css">
+  <link rel="stylesheet" href="/stylesheets/adminassets/css/components.css">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="/stylesheets/adminassets/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href='/stylesheets/adminassets/img/favicon.ico' />
+</head>
+
+<body>
+  <div class="loader"></div>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+
+      <div class="main-sidebar sidebar-style-2 ">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html"> <img alt="image" src="/stylesheets/adminassets/img/logo.png" class="header-logo" />
+              <span class="logo-name">Otika</span>
+            </a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Main</li>
+            {{!-- <li class="dropdown">
+              <a href="" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+            </li> --}}
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="monitor"></i><span>Dashboard
+                </span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="/admin/all-orders">Order Management</a></li>
+                <li><a class="nav-link" href="/admin/sales-report">Sales Report</a></li>
+                <li><a class="nav-link" href="/admin/coupons">Add Coupons/Offers</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="briefcase"></i><span>Customers
+                  View</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="/admin/all-users">View All Customers</a></li>
+                <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
+              </ul>
+            </li>
+
+            <li class="menu-header">UI Elements</li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Basic
+                  Components</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="alert.html">Alert</a></li>
+                <li><a class="nav-link" href="badge.html">Badge</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="shopping-bag"></i><span>Advanced</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="avatar.html">Avatar</a></li>
+                <li><a class="nav-link" href="card.html">Card</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link" href="blank.html"><i data-feather="file"></i><span>Blank Page</span></a>
+            </li>
+
+          </ul>
+        </aside>
+      </div>
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>All orders</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover" id="tableExport" style="width:100%;">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Date</th>
+                            <th>Order ID</th>
+                            {{!-- <th>User</th> --}}
+                            {{!-- <th>Product</th> --}}
+                            <th>Payment</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#each order}}
+                          <tr>
+                            <td>{{inc @index}}</td>
+                            <td>{{this.date}}</td>
+                            <td>{{this._id}}</td>
+                            {{!-- <td>{{this.user}}</td> --}}
+                            {{!-- <td>{{this.product}}</td> --}}
+                            <td>{{this.paymentMethod}}</td>
+                            <td>{{this.totalAmount}}</td>
+                            <td>{{this.status}}</td>
+                          </tr>
+                          {{/each}}
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          
+          
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
+            <div class="col">
+              <div class="card radius-10">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <h5 class="mb-0 text-success">{{codTotal.total}}</h5>
+                    <div class="ms-auto">
+                      <i class='bx bx-cart fs-3 text-primary'></i>
+                    </div>
+                  </div>
+                  <div class="progress my-2" style="height:4px;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 55%" aria-valuenow="25"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <p class="mb-0">COD</p>
+                    <p class="mb-0 ms-auto"><span><i class='bx bx-up-arrow-alt'></i></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card radius-10">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <h5 class="mb-0 text-danger">{{rasorpayTotal.total}}</h5>
+                    <div class="ms-auto">
+                      <i class='bx bx-cart fs-3 text-primary'></i>
+                    </div>
+                  </div>
+                  <div class="progress my-2" style="height:4px;">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 55%" aria-valuenow="25"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  
+                  <div class="d-flex align-items-center">
+                    <p class="mb-0">Online</p>
+                    <p class="mb-0 ms-auto"><span><i class='bx bx-up-arrow-alt'></i></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 " >
+                
+                  <div class="card-header">
+                    <h4>Bar Chart</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="recent-report__chart">
+                      <div id="myChart" style="height:450px;"></div>
+                    </div>
+                  </div>
+              </div>
+      </div>
+      </section>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+
+
+  <footer class="main-footer">
+
+    <div class="footer-right">
+    </div>
+  </footer>
+  </div>
+  </div>
+  <script src="/stylesheets/adminassets/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <!-- Page Specific JS File -->
+  <script src="/stylesheets/adminassets/bundles/datatables/datatables.min.js"></script>
+  <script src="/stylesheets/adminassets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/stylesheets/adminassets/bundles/datatables/export-tables/dataTables.buttons.min.js"></script>
+  <script src="/stylesheets/adminassets/bundles/datatables/export-tables/buttons.flash.min.js"></script>
+  <script src="/stylesheets/adminassets/bundles/datatables/export-tables/jszip.min.js"></script>
+  <script src="/stylesheets/adminassets/bundles/datatables/export-tables/pdfmake.min.js"></script>
+  <script src="/stylesheets/adminassets/bundles/datatables/export-tables/vfs_fonts.js"></script>
+  <script src="/stylesheets/adminassets/bundles/datatables/export-tables/buttons.print.min.js"></script>
+  <script src="/stylesheets/adminassets/js/page/datatables.js"></script>
+  <!-- Template JS File -->
+  <script src="/stylesheets/adminassets/js/scripts.js"></script>
+  <!-- Custom JS File -->
+  <script src="/stylesheets/adminassets/js/custom.js"></script>
+
+
+  <!-- Page Specific JS File -->
+  <script src="/stylesheets/adminassets/js/page/chart-amchart.js"></script>
+  <!-- Template JS File -->
+  <script src="/stylesheets/adminassets/js/scripts.js"></script>
+  <!-- Custom JS File -->
+  <script src="/stylesheets/adminassets/js/custom.js"></script>
+
+  <script src="/stylesheets/adminassets/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <script src="/stylesheets/adminassets/bundles/amcharts4/core.js"></script>
+  <script src="/stylesheets/adminassets/bundles/amcharts4/charts.js"></script>
+  <script src="/stylesheets/adminassets/bundles/amcharts4/animated.js"></script>
+  <script src="/stylesheets/adminassets/bundles/amcharts4/worldLow.js"></script>
+  <script src="/stylesheets/adminassets/bundles/amcharts4/maps.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-pie.min.js"></script>
+
+    <script>
+      var data = anychart.data.set([
+  ['Cash on delivery',{{codTotal.total}}],
+  ['Online payment',{{rasorpayTotal.total}}]
+]);
+// create a pie chart with the data
+var chart = anychart.pie(data)
+// set the chart radius making a donut chart
+chart.innerRadius('55%');
+chart.title('Payment methods used by customers')
+chart.container('myChart');
+chart.draw();
+
+// create a color palette
+var palette = anychart.palettes.distinctColors();
+  
+// set the colors according to the brands
+palette.items([
+  { color: '#1dd05d' },
+  { color: '#f60000' },
+  { color: '#00a3da' },
+  { color: '#156ef2' },
+  { color: '#f60000' },
+  { color: '#96a6a6' }
+]);
+
+// apply the donut chart color palette
+chart.palette(palette);
+    </script>
+
+  {{!-- <script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    // Global Options
+    {
+      {
+        !--Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = '#777'; --}
+    }
+
+    let massPopChart = new Chart(myChart, {
+      type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data: {
+        labels: ['COD', 'Online'],
+        datasets: [{
+          label: 'Population',
+          data: [{{ codTotal.total }}, {{ rasorpayTotal.total }}],
+      //backgroundColor:'green',
+      backgroundColor: [
+
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+
+        'rgba(255, 99, 132, 0.6)'
+      ],
+      borderWidth: 1,
+      borderColor: '#777',
+      hoverBorderWidth: 3,
+      hoverBorderColor: '#000'
+    }]
+		},
+    options: {
+      title: {
+        display: true,
+          text: 'Payment ',
+            fontSize: 25
+      },
+      legend: {
+        display: true,
+          position: 'center',
+
+            labels: {
+          fontColor: '#000'
+        }
+      },
+      layout: {
+        padding: {
+          left: 50,
+            right: 0,
+              bottom: 0,
+                top: 0
+        }
+      },
+      tooltips: {
+        enabled: true
+      }
+    }
+	});
+  </script> --}}
+</body>
+
+
+<!-- editable-table.html  21 Nov 2019 03:56:04 GMT -->
+
+</html>

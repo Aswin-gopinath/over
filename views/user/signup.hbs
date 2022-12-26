@@ -1,0 +1,103 @@
+<!-- Section: Design Block -->
+
+<div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" 
+style="background-image: url('https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/05/14220553/ebusiness.jpg')">
+<section class="text-center text-lg-start">
+    <style>
+        .cascading-right {
+            margin-right: -50px;
+        }
+
+        @media (max-width: 991.98px) {
+            .cascading-right {
+                margin-right: 0;
+            }
+        }
+    </style>
+
+    <!-- Jumbotron -->
+    <div class="container py-4 mt-5">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <h2 class="title text-center brands">Sign up now</h2>
+                        <form action="/signup" method="post" role="form">
+                            <!-- 2 column grid layout with text inputs for the first and last names -->
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        {{!-- <label class="form-label" for="form3Example1">FUll Name</label> --}}
+                                        <input type="text" name="name" id="name" class="form-control"
+                                            placeholder="Full Name" onkeyup="validateName()" required="" />
+                                        <span id="Name" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline ">
+                                        {{!-- <label class="form-label" for="form3Example3">Email address</label> --}}
+                                        <input type="email" name="email" id="email" class="form-control"
+                                            onkeyup="validEmail()" placeholder="Email address" />
+                                        <span id="Email" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline ">
+                                        {{!-- <label class="form-label" for="form3Example3">Phone Number</label> --}}
+                                        <input type="text" name="mobile" id="mobile" class="form-control"
+                                            onkeyup="validPhonenumber()" placeholder="Phone Number" />
+                                        <span id="Phonenumbers" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline ">
+                                        {{!-- <label class="form-label" for="form3Example4">Password</label> --}}
+                                        <input type="password" name="Password" id="password" class="form-control"
+                                            onkeyup="validPassowrd()" placeholder="Password" />
+                                        <span id="passwords" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline ">
+                                        {{!-- <label class="form-label" for="form3Example4">Retype Password</label> --}}
+                                        <input type="Password" id="cpassword" class="form-control" onkeyup="cPassowrd()"
+                                            placeholder="Retype Password" />
+                                        <span id="cpasswords" class="text-danger"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Submit button -->
+                            <button type="submit" onclick="return validateForm()"
+                                class="btn btn-primary btn-block mb-4">
+                                Sign up
+                            </button>
+
+                            <!-- Register buttons -->
+                            <p class="small  fw-bold mt-2 pt-1 mb-0">You have already an account?
+                                <a href="/login" class="link-danger text-decoration-none">Login</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
+</div>

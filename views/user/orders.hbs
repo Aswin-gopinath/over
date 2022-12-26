@@ -1,0 +1,66 @@
+<body>
+  <div class="container">
+    <section>
+      <div class="container">
+        <table class="table mt-5">
+          <thead>
+            <tr>
+              <th scope="col">Date of Order</th>
+              <th scope="col">Address</th>
+              {{!-- <th scope="col">Pincode</th>
+              <th scope="col">Mobile</th> --}}
+              <th scope="col">Amount</th>
+              <th scope="col">Payment</th>
+              <th scope="col">Status</th>
+
+
+            </tr>
+          </thead>
+
+          <tbody>
+            {{#each orders}}
+            <tr>
+              <td>{{this.date}}</td>
+              <td>{{this.deliveryDetails.address}}<br>
+                {{this.deliveryDetails.pincode}}<br>
+                {{this.deliveryDetails.mobile}}
+              </td>
+
+              <td>{{this.totalAmount.cartTotal}}</td>
+              <td>{{this.paymentMethod}}</td>
+              <td>{{this.status}}</td>
+
+              {{#if_eq this.status "cancelled" }}
+              <td>
+                <a href="/view-order-products/{{this._id}}" class="btn btn-primary disabled">View Products</a>
+              </td>
+              <td>
+                <a href="/cancelOrder/{{this._id}}" class=" btn btn-danger disabled">Cancel Order</a>
+              </td>
+              {{else}}
+              {{#if_eq this.status "Delivered"}}
+              <td>
+                <a href="/view-order-products/{{this._id}}" class="btn btn-primary">View Products</a>
+              </td>
+              <td>
+                <a href="/returnOrder/{{this._id}}" class=" btn btn-warning">Return Product</a>
+              </td>
+              {{else}}
+              <td>
+                <a href="/view-order-products/{{this._id}}" class="btn btn-primary">View Products</a>
+              </td>
+              <td>
+                <a href="/cancelOrder/{{this._id}}" class=" btn btn-danger">Cancel Order</a>
+              </td>
+              {{/if_eq}}
+              {{/if_eq}}
+              {{!-- <td><a href="/view-order-products/{{this._id}}" class="btn btn-primary">View Product</a></td> --}}
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+
+      </div>
+    </section>
+  </div>
+</body>

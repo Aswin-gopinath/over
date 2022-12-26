@@ -1,0 +1,44 @@
+<div class="container mt-4">
+    <div class="row">
+       
+
+<form action="/usereditaddress" method="post">
+    <div class="row">
+        <div class="col-lg-9">
+            <h2 class="checkout-title">Your address</h2><!-- End .checkout-title -->
+            <label>Country *</label>
+            <input type="text" class="form-control" required>
+
+            <label>Street address *</label>
+            <input type="text" class="form-control" id="address" name="address" value="{{savedAddress.address}}" >
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Town / City *</label>
+                    <input type="text" class="form-control" id="city" name="city" >
+                </div><!-- End .col-sm-6 -->
+
+                <div class="col-sm-6">
+                    <label>State / County *</label>
+                    <input type="text" class="form-control" id="state" name="state" >
+                </div><!-- End .col-sm-6 -->
+            </div><!-- End .row -->
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Postcode / ZIP *</label>
+                    <input type="text" class="form-control" id="pincode" name="pincode" >
+                </div><!-- End .col-sm-6 -->
+
+                <div class="col-sm-6">
+                    <label>Phone *</label>
+                    <input type="text" class="form-control" id="mobile" name="mobile" >
+                
+                </div><!-- End .col-sm-6 -->
+
+                <button type="submit" class="btn btn-success" style="width: 40px;">Submit</button>
+            </div><!-- End .row -->
+        </div><!-- End .col-lg-9 -->
+    </div><!-- End .row -->
+</form>
+</div></div>

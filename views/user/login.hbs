@@ -1,0 +1,78 @@
+<!-- Section: Design Block -->
+
+<div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" 
+style="background-image: url('https://pwpblog.wpengine.com/wp-content/uploads/2022/08/Ecommerce-Website-Promotion_Final.png')">
+<section class="text-center text-lg-start">
+  <style>
+    .cascading-right {
+      margin-right: -50px;
+    }
+
+    @media (max-width: 991.98px) {
+      .cascading-right {
+        margin-right: 0;
+      }
+    }
+  </style>
+
+  <!-- Jumbotron -->
+
+  <div class="container py-4 mt-5">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="title text-center brands">Login now</h2>
+            <form action="/login" method="post">
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              {{#if loginErr}}
+              <div class="alert alert-danger" role="alert">
+                Invalid Email or Password
+              </div>
+              {{/if}}
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" name="email" id="form3Example3" class="form-control" placeholder="Email address"
+                  required="" />
+                <label class="form-label" for="form3Example3">Email address</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="Password" id="form3Example4" class="form-control" name='Password' placeholder="Password" />
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+
+              <!-- Checkbox -->
+              {{!-- <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                <label class="form-check-label" for="form2Example33">
+                  Subscribe to our newsletter
+                </label>
+              </div> --}}
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                sign in
+              </button>
+
+              <p class="small  fw-bold mt-2 pt-1 mb-0">Don't have an account?
+                <a href="/signup" class="link-danger text-decoration-none">Register</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+</div>
+<!-- Section: Design Block -->
+

@@ -1,0 +1,21 @@
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="/admin/edit-users/{{users._id}}" method="post"  >
+                    <label for="">Name</label>
+                    <input type="text" name="name" class="form-control" value="{{users.name}}">
+                    <label for="">E-mail</label>
+                    <input type="text" name="email" class="form-control" value="{{users.email}}">
+                    <label for="">Mobile</label>
+                    <input type="text" name="mobile" class="form-control" value="{{users.mobile}}">
+                    <!--<label for=""></label>
+                    <input type="text" name="price" class="form-control"> -->
+                    <label for="">Address</label>
+                    <input type="text" class="form-control" name="address" value="{{users.address}}">
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,146 @@
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Molla - Bootstrap eCommerce Template</title>
+<meta name="keywords" content="HTML5 Template">
+<meta name="description" content="Molla - Bootstrap eCommerce Template">
+<meta name="author" content="p-themes">
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/stylesheets/assets/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/stylesheets/assets/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/stylesheets/assets/images/icons/favicon-16x16.png">
+<link rel="manifest" href="/stylesheets/assets/images/icons/site.html">
+<link rel="mask-icon" href="/stylesheets/assets/images/icons/safari-pinned-tab.svg" color="#666666">
+<link rel="shortcut icon" href="/stylesheets/assets/images/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Molla">
+<meta name="application-name" content="Molla">
+<meta name="msapplication-TileColor" content="#cc9966">
+<meta name="msapplication-config" content="/stylesheets/assets/images/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- Plugins CSS File -->
+<link rel="stylesheet" href="/stylesheets/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="/stylesheets/assets/css/plugins/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="/stylesheets/assets/css/plugins/magnific-popup/magnific-popup.css">
+<!-- Main CSS File -->
+<link rel="stylesheet" href="/stylesheets/assets/css/style.css">
+<link rel="stylesheet" href="/stylesheets/assets/css/demos/demo-18.css">
+<!-- Plugins JS File -->
+<script src="/stylesheets/assets/js/jquery.min.js"></script>
+<script src="/stylesheets/assets/js/bootstrap.bundle.min.js"></script>
+<script src="/stylesheets/assets/js/jquery.hoverIntent.min.js"></script>
+<script src="/stylesheets/assets/js/jquery.waypoints.min.js"></script>
+<script src="/stylesheets/assets/js/superfish.min.js"></script>
+<script src="/stylesheets/assets/js/owl.carousel.min.js"></script>
+<script src="/stylesheets/assets/js/bootstrap-input-spinner.js"></script>
+<script src="/stylesheets/assets/js/jquery.magnific-popup.min.js"></script>
+<!-- Main JS File -->
+<script src="/stylesheets/assets/js/main.js"></script>
+<script src="/stylesheets/assets/js/demos/demo-18.js"></script>
+
+
+<div class="intro-slider-container mb-1 mb-lg-1" style="height: 80px;">
+
+    <header class="header header-11 ">
+        <div class="header-middle sticky-header">
+            <div class="container">
+                <div class="header-left">
+                    <nav class="main-nav">
+                        <ul class="menu sf-arrows">
+                            <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="briefcase"></i><span>Home</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="/">All</a></li>
+                            <li><a class="nav-link" href="/cat-mobile">Mobiles</a></li>
+                            <li><a class="nav-link" href="/cat-watches">Watches</a></li>
+                            <li><a class="nav-link" href="/cat-earphones">Earphones</a></li>
+                        </ul>
+                   
+                            {{#if users}}
+                            <li>
+                                <a href="/cart">Cart</a>
+                    
+
+                            </li>
+                            <li>
+                                <a href="/wishlist">Wishlist</a>
+                            </li>
+
+                            <li><a href="orders">Orders</a></li>
+
+                            <li>
+                                <a href="/profile">Profile</a>
+                            </li>
+                            {{/if}}
+                        </ul><!-- End .menu -->
+                    </nav><!-- End .main-nav -->
+
+                    <button class="mobile-menu-toggler">
+                        <span class="sr-only">Toggle mobile menu</span>
+                        <i class="icon-bars"></i>
+                    </button>
+                </div><!-- End .header-left -->
+
+                <div class="header-center">
+                    <a href="index.html" class="logo">
+                        <img src="/stylesheets/assets/images/demos/demo-18/logo.png" alt="Molla Logo" width="82"
+                            height="25">
+                    </a>
+                </div><!-- End .header-center -->
+
+                <div class="header-right">
+                    <div class="header-search header-search-extended header-search-visible">
+                        <a href="#" class="search-toggle" role="button"><i class="icon-search"></i></a>
+                        <form action="#" method="get">
+                            <div class="header-search-wrapper">
+                                <label for="q" class="sr-only">Search</label>
+                                <input type="search" class="form-control" name="q" id="q"
+                                    placeholder="Search product ..." required>
+                                <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+                            </div><!-- End .header-search-wrapper -->
+                        </form>
+                    </div><!-- End .header-search -->
+                </div>
+
+
+                <div class="dropdown cart-dropdown">
+                    {{#if users}}
+                    <a href="/cart" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" data-display="static">
+                        <i class="icon-shopping-cart"></i>
+                        <span class="cart-count">{{cartCount}}</span>
+                    </a>
+
+                    <a href="wishlist.html" class="wishlist-link">
+                        <i class="icon-heart-o"></i>
+                        <span class="wishlist-count">3</span>
+                    </a>
+                    {{/if}}
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" style="width: 40px; padding:2%" type="button"
+                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{#if users }}
+                        {{users.name}}
+                    
+                        {{else}}
+                        Accounts
+                        {{/if}}
+
+                    </button>
+                    <div class="dropdown-menu" style="width:20px; margin-left:10px"
+                        aria-labelledby="dropdownMenuButton">
+                        {{#if users}}
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                        {{else}}
+                        <a class="dropdown-item" href="/login">Login</a>
+                        {{/if}}
+
+                    </div>
+                </div>
+            </div><!-- End .header-right -->
+        </div><!-- End .container -->
+</div><!-- End .header-middle -->
+</div>
+</header><!-- End .header -->
